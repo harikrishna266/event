@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CategoriesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MapPage } from '../map/map';
 
 @IonicPage()
 @Component({
@@ -21,5 +15,7 @@ export class CategoriesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriesPage');
   }
-
+  goToMaps() {
+    this.navCtrl.setRoot(MapPage);
+  }
 }

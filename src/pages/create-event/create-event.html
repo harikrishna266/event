@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Create your Event</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    
+    <form [formGroup]="createEventForm" (ngSubmit)="createEvent()">
+        <ion-card>
+            <ion-list>
+                
+                <ion-item>
+                    <ion-label floating>Name</ion-label>
+                    <ion-input  formControlName="name"  type="text"  ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>details</ion-label>
+                    <ion-input  formControlName="details"  type="text" ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Date</ion-label>
+                    <ion-input  formControlName="date"  type="date"  ></ion-input>
+                </ion-item>
+                
+            </ion-list>
+            <button ion-button  type="submit" [disabled]="!createEventForm.valid" >Create Event</button>
+            <button ion-button  type="button"  (click)="cancelEvent()" >Cancel</button>
+        </ion-card>
+    </form>
+  </ion-content>

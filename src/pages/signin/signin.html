@@ -1,18 +1,28 @@
-<!--
-  Generated template for the SigninPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>signin</ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Signin</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="makelogin()">
+      <ion-card>
+          <ion-list>
+              <!-- <img class="login-image" src="./assets/imgs/lng.jpg" /> -->
+              <ion-item>
+                  <ion-label floating>Username</ion-label>
+                  <ion-input  formControlName="email"  type="text" value=""></ion-input>
+              </ion-item>
 
-<ion-content padding>
-
+              <ion-item>
+                  <ion-label floating>Password</ion-label>
+                  <ion-input  formControlName="password" type="password"></ion-input>
+              </ion-item>
+          </ion-list>
+          <button ion-button  [disabled]="!loginForm.valid"  full type="submit" >Login</button>
+      </ion-card>
+  </form>
 </ion-content>
