@@ -14,7 +14,7 @@ import { ComponentsModule } from '../components/components.module';
 import { MapPageModule } from '../pages/map/map.module';
 import { CreateEventPageModule} from '../pages/create-event/create-event.module';
 import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
-
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { EventDetailsPageModule } from '../pages/event-details/event-details.mod
   ],
   providers: [
     StatusBar,
+    Geolocation,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

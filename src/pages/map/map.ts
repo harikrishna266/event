@@ -4,6 +4,8 @@ import { ActionSheetController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { CreateEventPage } from '../create-event/create-event';
 import { EventDetailsPage } from '../event-details/event-details';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 declare const L;
 
@@ -20,6 +22,7 @@ export class MapPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public modal: ModalController,
+    public geolocation: Geolocation,
     public actionSheetCtrl:ActionSheetController) {
   }
 
@@ -32,8 +35,12 @@ export class MapPage {
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       id: 'mapbox.streets'
     }).addTo(this.map);
-    this.map.on('locationfound',(e) => this.onLocationFound(this,e));
-    this.map.on('locationerror', this.onLocationError);
+    this.geolocation.getCurrentPosition().then((resp) => {
+      const latlong =  L.latLng(resp.coords.latitude, resp.coords.longitude);
+      this.onLocationFound(this,latlong);
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
     this.map.on('contextmenu', (e) => this.longPress(e)) ;
     this.map.locate({setView: true, maxZoom: 16});    
   }
