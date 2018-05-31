@@ -95,5 +95,16 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="gets the details of the spots" />
     </plugin>
+    <allow-navigation href="http://172.20.10.3:8100" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.3.4">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAbgLGzrbdEUc5Du8rAF3HzZPw0iFBltQc" />
+        <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="26.1.0" />
+    </plugin>
+    <allow-navigation href="http://172.20.10.12:8101" />
+    <allow-navigation href="http://172.20.10.12:8100" />
+    <allow-navigation href="http://192.168.0.11:8100" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <engine name="android" spec="7.0.0" />
+    <allow-navigation href="http://192.168.225.51:8100" />
 </widget>

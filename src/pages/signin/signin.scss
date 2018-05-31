@@ -1,3 +1,17 @@
 page-signin {
-
+    .scroll-content {
+        background: url('/assets/imgs/background.jpg');
+        opacity: .9;
+        background-attachment: fixed;
+        background-position: center; 
+    
+    }
+    .logo{
+        width: 171px;
+        margin: 0 auto;
+        height: 155px;
+    }
+    .input-cover{
+        border-bottom: 1px solid #cfcfcf;
+    }
 }

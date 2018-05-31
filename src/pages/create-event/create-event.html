@@ -22,13 +22,37 @@
                     <ion-input  formControlName="details"  type="text" ></ion-input>
                 </ion-item>
                 <ion-item>
+                    <ion-label>Category</ion-label>
+                    <ion-select >
+                      <ion-option value="f">Female</ion-option>
+                      <ion-option value="m">Male</ion-option>
+                    </ion-select>
+                  </ion-item>
+                <ion-item>
                     <ion-label floating>Date</ion-label>
                     <ion-input  formControlName="date"  type="date"  ></ion-input>
                 </ion-item>
+                <ion-item>
+                    <ion-label floating>Start time</ion-label>
+                    <ion-input  formControlName="date"  type="time"  ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>End time</ion-label>
+                    <ion-input  formControlName="date"  type="time"  ></ion-input>
+                </ion-item>
+                <ion-item>
+                    Upload image
+                    <button ion-button outline item-end icon-left (click)="getImage()">
+                      <ion-icon name="camera"></ion-icon>
+                    </button>
+                  </ion-item>
+                  <ion-item>
+                    <button ion-button  type="submit" [disabled]="!createEventForm.valid" >Create Event</button>
+                    <button ion-button  type="button"  (click)="cancelEvent()" >Cancel</button>
+                  </ion-item>
                 
             </ion-list>
-            <button ion-button  type="submit" [disabled]="!createEventForm.valid" >Create Event</button>
-            <button ion-button  type="button"  (click)="cancelEvent()" >Cancel</button>
+            
         </ion-card>
     </form>
   </ion-content>

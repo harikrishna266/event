@@ -15,7 +15,14 @@ import { MapPageModule } from '../pages/map/map.module';
 import { CreateEventPageModule} from '../pages/create-event/create-event.module';
 import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GooglemapService } from '../pages/map/map.service';
+import { Camera } from '@ionic-native/camera';
+import { LoginProvider } from '../providers/login';
+import { HttpModule } from '@angular/http';
 
+import { ApiService } from '../providers/api';
+import { CategoryProvider } from '../providers/category';
+import { EventProvider } from '../providers/event';
 @NgModule({
   declarations: [
     MyApp,
@@ -30,6 +37,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     CreateEventPageModule,
     EventDetailsPageModule,
     MapPageModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,6 +48,11 @@ import { Geolocation } from '@ionic-native/geolocation';
   providers: [
     StatusBar,
     Geolocation,
+    ApiService,
+    LoginProvider,
+    CategoryProvider,
+    EventProvider,
+    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
